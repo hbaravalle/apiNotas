@@ -9,12 +9,10 @@ module.exports = {
         autoIncrement: true
       },
       user_id: {
-        type: Sequelize.DataTypes.INTEGER,
+        type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
+        allowNull: false,
         references: {
-          model: {
-            tableName: 'users',
-            schema: 'schema'
-          },
+          model: 'users',
           key: 'id'
         },
       },
