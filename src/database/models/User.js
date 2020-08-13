@@ -1,27 +1,28 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, dataTypes) {
     let alias = "User";
     let cols = {
         id: {
-            type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
         name: {
-            type: Sequelize.DataTypes.STRING(60),
+            type: dataTypes.STRING(60),
             allowNull: false
         },
         email: {
-            type: Sequelize.DataTypes.STRING(100),
+            type: dataTypes.STRING(100),
             allowNull: false,
             unique: true
         },
         password: {
-            type:Sequelize.DataTypes.STRING(100),
+            type:dataTypes.STRING(100),
             allowNull: false
         }
     }
     let config = {
-        timestamps: true
+        timestamps: true,
+        underscored: true
     }
 
     let User = sequelize.define(alias, cols, config);

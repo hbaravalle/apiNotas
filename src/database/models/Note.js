@@ -2,25 +2,26 @@ module.exports = function(sequelize, dataTypes) {
     let alias = "Note";
     let cols = {
         id: {
-            type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
         user_id: {
-            type: Sequelize.DataTypes.INTEGER,
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         title: {
-            type: Sequelize.DataTypes.STRING(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         text: {
-            type: Sequelize.DataTypes.TEXT,
+            type: dataTypes.TEXT,
             allowNull: false
         }
     }
     let config = {
-        timestamps: true
+        timestamps: true,
+        underscored: true
     }
 
     let Note = sequelize.define(alias, cols, config);
