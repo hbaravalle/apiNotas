@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path')
 
-router.get('/', (req, res) => res.send("OK"))
+router.get('/', (req, res) => {
+    return res.sendFile(path.join(__dirname, '../views/test.html'))
+})
 
 module.exports = router;

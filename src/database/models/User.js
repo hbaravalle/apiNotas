@@ -21,8 +21,7 @@ module.exports = function(sequelize, dataTypes) {
         }
     }
     let config = {
-        timestamps: true,
-        underscored: true
+        timestamps: true        
     }
 
     let User = sequelize.define(alias, cols, config);

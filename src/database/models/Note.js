@@ -20,8 +20,7 @@ module.exports = function(sequelize, dataTypes) {
         }
     }
     let config = {
-        timestamps: true,
-        underscored: true
+        timestamps: true
     }
 
     let Note = sequelize.define(alias, cols, config);
